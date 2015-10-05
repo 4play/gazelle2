@@ -80,6 +80,7 @@ function make_utf8($Str) {
 		if (is_utf8($Str)) { $Encoding="UTF-8"; }
 		if (empty($Encoding)) { $Encoding=mb_detect_encoding($Str,'UTF-8, ISO-8859-1'); }
 		if (empty($Encoding)) { $Encoding="ISO-8859-1"; }
+		if (empty($Encoding)) { $Encoding="ISO-8859-2"; }
 		if ($Encoding=="UTF-8") { return $Str; }
 		else { return @mb_convert_encoding($Str,"UTF-8",$Encoding); }
 	}
